@@ -892,7 +892,8 @@ var FADE_SPEED = 100,
 	        this.textarea.val(JSON.stringify(JSON.parse(jsonVal), null, tab_chars));
 
 			this.$('.validate').removeClass('error').addClass('success');
-			this.errorView.hide();
+      // if json supplied in query string, this.errorView is undefined
+			if (this.errorView) this.errorView.hide();
 	    },
 
 	    /**
